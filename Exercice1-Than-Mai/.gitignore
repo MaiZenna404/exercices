@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# VS Code
+.vscode/
+
+# Ignore environment variables
+.env
