@@ -15,12 +15,14 @@ class ToDoController:
     def remove_task(self, index: int):
         if 0 <= index < len(self.tasks):
             del self.tasks[index]
+            return True
+        return False
 
     def list_tasks(self):
         return self.tasks
 
-    def complete_task(self, index: int):
+    def complete_task(self, index: int) -> bool:
         if 0 <= index < len(self.tasks):
             self.tasks[index].task_completed() # Marque la tâche sélectionnée 'via son index' comme complétée.
-            return list(self.tasks)
-        return None
+            return True
+        return False
