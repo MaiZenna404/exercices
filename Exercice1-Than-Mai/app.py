@@ -6,6 +6,8 @@ from controllers.todo_controller import ToDoController
 app = Flask(__name__)
 controller = ToDoController()
 
+''' Routes CRUD pour gérer les tâches '''
+
 @app.route('/tasks', methods=['GET'])
 def get_tasks(): # Récupérer toutes les tasks
     if not controller.list_tasks():
