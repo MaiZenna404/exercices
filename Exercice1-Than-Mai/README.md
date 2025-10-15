@@ -12,6 +12,7 @@ Exercice1-Nom-Prenom/
 │   └── todo_controller.py
 ├── views/
 │   └── cli_view.py
+├── app.py // point d'entrée de l'application Flask
 ├── main.py
 └── README.md
 ```
@@ -20,18 +21,20 @@ Exercice1-Nom-Prenom/
 
 ```bash
 python main.py
+
+python app.py # pour lancer le serveur Flask
 ```
 
 ## Fonctionnalités
 
 - Ajouter, supprimer, afficher, compléter des tâches
 - Architecture MVC
-- POO avec héritage possible
+- Création d'une API avec Flask, accessible via l'adresse `http://127.0.0.1:5000/<endpoint>`
 
 ## Auteur
 
-Nom Prénom
+Mai THAN
 
 ## Lien du repo Github
 
-À compléter après publication.
+https://github.com/MaiZenna404/exercices/tree/main/Exercice1-Than-Mai
