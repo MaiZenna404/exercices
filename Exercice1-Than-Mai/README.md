@@ -2,7 +2,7 @@
 
 Small application in Python to manage a ToDo list via command line (CLI) and web API (Flask). Clear architecture (MVC), object-oriented, easy to use and extend.
 
-## Structure du projet
+## Project Structure
 
 ```
 Exercice1-Nom-Prenom/
@@ -20,10 +20,11 @@ Exercice1-Nom-Prenom/
 ## Prerequisites
 
 - Python 3.7 or higher
-- Install dependencies:
+- To install all required libraries at once, use:
   ```bash
-  pip install flask
+  pip install -r allRequirements.txt
   ```
+  (Make sure the file `allRequirements.txt` is in the project root and contains all needed packages)
 
 ## Utilisation CLI (ligne de commande)
 
@@ -39,11 +40,11 @@ Follow the on-screen instructions to add, view, delete, or complete tasks.
 
 To launch the Flask web server:
 
-```bash
+````bash
 python app.py
 ```bash
 python app.py
-```
+````
 
 The API will be accessible at: [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
