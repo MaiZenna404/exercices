@@ -1,6 +1,6 @@
 """ Importation des modules Flask nécessaires"""
 from flask import Flask, request, jsonify
-""" Importation du controleur ToDoController """
+""" Importation du controleur ToDoController() """
 from controllers.todo_controller import ToDoController
 
 app = Flask(__name__)
@@ -28,17 +28,24 @@ def add_task():
 
 @app.route('/delete-task/<int:idx>', methods=['DELETE'])
 def delete_task(idx):
-    # Vérifier que l'index existe bel et bien avant de le supprimer
-    if controller.remove_task(idx - 1) is None:
-        return jsonify({"error": "Index de tâche invalide."}), 400
+    # Vérifier que l'index est oui ou non dans la plage
+    if idx < 1 or idx > len(controller.list_tasks()):
+        return jsonify({"error": "Index de tâche inatteignable."}), 400
+    # Case dans laquelle l'index est absent de la liste
+    if not controller.remove_task(idx - 1):
+        return jsonify({"error": "Index de tâche inatteignable."}), 400
     return jsonify({"message": "Tâche supprimée !"})
 
 @app.route('/mark-as-completed/<int:idx>', methods=['PUT'])
 def mark_as_completed(idx):
-    if controller.complete_task(idx - 1) is None:
-        return jsonify({"error": "Index de tâche invalide."}), 400
+    # Vérifier que l'index est oui ou non dans la plage
+    if idx < 1 or idx > len(controller.list_tasks()):
+        return jsonify({"error": "Index de tâche inatteignable."}), 400
+    # Case dans laquelle l'index est absent de la liste
+    if not controller.complete_task(idx - 1):
+        return jsonify({"error": "Index de tâche inatteignable."}), 400
     return jsonify({"message": "Tâche marquée comme complétée !"})
 
-""" Vérifie si le fichier qui exe le code est bien app.py """
+""" Faire en sorte que le script ne s'exécute pas lorsqu'il est importé ailleurs, mais uniquement lorsqu'il est exécuté directement avec ce fichier """
 if __name__ == "__main__":
     app.run(debug=True)
