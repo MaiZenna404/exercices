@@ -1,7 +1,7 @@
 from controllers.todo_controller import ToDoController
 
 class CLIView:
-    """Vue CLI pour interagir avec l'utilisateur."""
+    """CLI View to interact with the user via command line."""
     def __init__(self):
         self.controller = ToDoController()
 

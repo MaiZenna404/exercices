@@ -1,40 +1,70 @@
 # Exercice1-Nom-Prenom
 
-Mini API CLI pour gérer une ToDoList en Python (MVC, POO)
+Small application in Python to manage a ToDo list via command line (CLI) and web API (Flask). Clear architecture (MVC), object-oriented, easy to use and extend.
 
 ## Structure du projet
 
 ```
 Exercice1-Nom-Prenom/
 ├── models/
-│   └── task.py
+│   └── task.py           # Task Model
 ├── controllers/
-│   └── todo_controller.py
+│   └── todo_controller.py # Workflow logic (add, delete, etc.)
 ├── views/
-│   └── cli_view.py
-├── app.py // point d'entrée de l'application Flask
-├── main.py
+│   └── cli_view.py       # CLI Interface
+├── app.py                # Flask API entry point
+├── main.py               # CLI entry point
 └── README.md
 ```
 
-## Utilisation
+## Prerequisites
+
+- Python 3.7 or higher
+- Install dependencies:
+  ```bash
+  pip install flask
+  ```
+
+## Utilisation CLI (ligne de commande)
+
+To launch the application in console mode:
 
 ```bash
 python main.py
-
-python app.py # pour lancer le serveur Flask
 ```
 
-## Fonctionnalités
+Follow the on-screen instructions to add, view, delete, or complete tasks.
 
-- Ajouter, supprimer, afficher, compléter des tâches
-- Architecture MVC
-- Création d'une API avec Flask, accessible via l'adresse `http://127.0.0.1:5000/<endpoint>`
+## API Usage (web mode)
 
-## Auteur
+To launch the Flask web server:
+
+```bash
+python app.py
+```bash
+python app.py
+```
+
+The API will be accessible at: [http://127.0.0.1:5000](http://127.0.0.1:5000)
+
+### Main Endpoints
+
+- `GET /tasks` : List all tasks
+- `POST /add-task` : Add a task (JSON : `{ "title": "...", "description": "..." }`)
+- `DELETE /delete-task/<idx>` : Delete the task at index `<idx>`
+- `PUT /mark-as-completed/<idx>` : Mark the task at `<idx>` as completed
+
+## Functionalities
+
+- Add, delete, view, complete tasks
+- MVC architecture (separation of model, view, controller)
+- REST API with Flask
+- Good practices in Python and OOP
+
+## Author
 
 Mai THAN
 
-## Lien du repo Github
+## GitHub Repo Link
 
-https://github.com/MaiZenna404/exercices/tree/main/Exercice1-Than-Mai
+[https://github.com/MaiZenna404/exercices/tree/main/Exercice1-Than-Mai](https://github.com/MaiZenna404/exercices/tree/main/Exercice1-Than-Mai)

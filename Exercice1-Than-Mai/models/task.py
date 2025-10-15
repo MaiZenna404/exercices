@@ -1,9 +1,11 @@
-""" Importation du modèle qui permet à un attribut d'être optionnel """
+""" Import Optional from typing for optional parameter """
 from typing import Optional
 
 class Task:
-    """Représente une tâche de la ToDoList."""
-    """Init une tâche avec son title, description [optionnelle] et son statut (complétée ou non)."""
+    
+    """Represents a task in the ToDoList."""
+    """Init a task with its title, optional description, and status (completed or not)."""
+
     def __init__(self, title: str, description: Optional[str] = None):
         self.title = title
         self.description = description
@@ -18,4 +20,4 @@ class Task:
             status = "✔"
         else:
             status = "✗"
-        return f"[{status}] {self.title} - {self.description if self.description else f'{self.title} n\'a pas encore été complétée.'}"
+        return f"[{status}] {self.title} - {self.description if self.description else f'{self.title} - Description none.'}"
